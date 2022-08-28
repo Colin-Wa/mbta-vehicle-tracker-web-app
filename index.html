@@ -1,0 +1,38 @@
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+</head>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+crossorigin=""/>
+
+<body>
+    <a href="../index.html" id="home-link">Home</a>
+    <div class="map2" id="map"></div>
+
+    <div id="original-site-buttons">
+        <button class="btn red" onclick="toggle_route('Red,Mattapan')">Red Line</button>
+        <button class="btn orange" onclick="toggle_route('Orange')">Orange Line</button>
+        <button class="btn blue" onclick="toggle_route('Blue')">Blue Line</button>
+        <button class="btn green" onclick="toggle_route('Green-B,Green-C,Green-D,Green-E')">Green Line</button>
+        <button class="btn silver" onclick="toggle_route('741,742,743,751,749,746')">Silver Line</button>
+
+        <div>
+            <input class="bus-number-entry bus-cr-entry" type="text" id="search" placeholder="Bus Number"/>
+            <input class="bus-submit bus-cr-entry" type="submit" value="Submit" onclick="toggle_route('Bus')"/>
+        </div>
+
+        <select class="btn bus-cr-entry" id="drop_down_field" >
+            <option value="" disabled selected>Commuter Rail Routes</option>
+        </select>
+        <button class="cr-submit bus-cr-entry" onclick="toggle_route('CR')">Submit</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="rotate_leaflet.js"></script>
+</body>

@@ -1,0 +1,14 @@
+{
+  "type": "module",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "geojson": "^0.5.0",
+    "gtfs": "^3.8.0",
+    "gtfs-realtime-bindings": "^0.0.6",
+    "gtfs-to-geojson": "^3.2.0",
+    "node-fetch": "^3.3.0",
+    "request": "^2.88.2",
+    "unzip": "^0.1.11"
+  },
+  "max-old-space-size": "30000"
+}

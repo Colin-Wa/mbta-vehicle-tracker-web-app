@@ -1,0 +1,17 @@
+{
+    "agencies": [
+        {
+            "agency_key": "mbta",
+            "url": "https://cdn.mbta.com/MBTA_GTFS.zip",
+            "realtimeUrls": [
+                "https://cdn.mbta.com/realtime/VehiclePositions.pb"
+            ],
+            "exclude": ["stop_times"]
+        }
+    ],
+    "bufferSizeMeters": 100000,
+    "outputType": "route",
+    "outputFormat": "lines-and-stops",
+    "zipOutput": false,
+    "sqlitePath": "/downloaded-data"
+}

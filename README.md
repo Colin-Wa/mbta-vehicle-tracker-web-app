@@ -1,6 +1,7 @@
-# Setup Guide
+# MBTA Vehicle Tracker
 
-1. Download GTFS data from `http://cdn.mbta.com/MBTA_GTFS.zip`
-2. Extract `MBTA_GTFS.zip` and place contents into `mbta-vehicle-tracker-web-app/data`
-3. Delete any contents of `mbta-vehicle-tracker-web-app/route_coordinates` and use Node.js to run `create_files.js`
-4. Open `index.html`
+Displays train positions and routes using the Leaflet library.
+
+GTFS static and realtime data is parsed through the node-gtfs library.
+
+The backend uses express to respond to calls from the client about route shapes and vehicle positions.

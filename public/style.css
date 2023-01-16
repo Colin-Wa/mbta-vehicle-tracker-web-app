@@ -148,13 +148,16 @@
   background-color: #FFFFFF;
 }
 
-#drop_down_field
-{
+.drop_down_class {
   border-radius: 0.6em 0 0 0.6em;
-  width: 15rem;
   border: 2px solid #7C878E;
   color: #7C878E;
   margin-right: 0;
+}
+
+#cr-drop_down_field
+{
+  width: 15rem;
 }
 
 .cr-submit {

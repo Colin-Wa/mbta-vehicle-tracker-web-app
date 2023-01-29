@@ -19,9 +19,9 @@ async function concat_vehicles(item_sep)
     let output = new Array;
     for(let i in item_sep)
     {
-        //const vehicles = await fetch("/vehicles", {
+        const vehicles = await fetch("/vehicles", {
         // Comment out the line below if you want to host the server yourself and replace it with your URL
-        const vehicles = await fetch("https://colinwa.org:3000/vehicles", {
+        // const vehicles = await fetch("https://colinwa.org:3000/vehicles", {
             headers: {
                 "route_id": item_sep[i]
             }
@@ -129,13 +129,14 @@ function update_map(vehicles)
                 dstop = vehicles[i].currentStopSequence[1];
             } catch (err) {}
 
+
             entry[1].setLatLng([vehicles[i].position.latitude,vehicles[i].position.longitude]);
             try {
                 entry[1]._popup.setContent(handle_popup(vehicles[i], cstop, dstop));
             }
             catch (err)
             {
-                entry[1].bindPopup(handle_popup(add_to_array[i], cstop, dstop));
+                entry[1].bindPopup(handle_popup(vehicles[i], cstop, dstop));
             }
         }
     });
@@ -251,9 +252,9 @@ async function toggle_path(route_id)
         var temp_layer = L.featureGroup();
         temp_layer.id = route_id;
 
-        //const post = await fetch("/route", {
+        const post = await fetch("/route", {
         // Comment out the line below if you want to host the server yourself and unncomment the line above
-        const post = await fetch("https://colinwa.org:3000/route", {
+        // const post = await fetch("https://colinwa.org:3000/route", {
             headers: {
                 "route_id": route_id
             }
@@ -282,9 +283,9 @@ function driver(go_on)
 
 async function populate_cr_dropdown()
 {
-    //const routes = await fetch("/crroutes", {
+    const routes = await fetch("/crroutes", {
     // Comment out the line below if you want to host the server yourself and unncomment the line above
-    const routes = await fetch("https://colinwa.org:3000/crroutes", {
+    // const routes = await fetch("https://colinwa.org:3000/crroutes", {
     }).then((res) => res.json());
 
         for(let i in routes)

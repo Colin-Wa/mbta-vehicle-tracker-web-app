@@ -144,24 +144,40 @@ async function get_positions_by_route_id(rid)
   }
 }
 
-async function get_stops(vehicle)
+function get_stops(vehicle)
 {
-  const trips = await getTrips({
-    trip_id: vehicle.trip.tripId,
+
+  const trips = getTrips({
+    route_id: vehicle.trip.routeId,
     direction_id: vehicle.trip.directionId
   });
 
-  const stops = await getStops({
+  const stops = getStops({
     stop_id: vehicle.stopId,
   });
 
-  if(trips.length <= 0 || stops.length <= 0)
+  let head_sign;
+  let stop_name;
+
+  try
   {
-    return null;
+    head_sign = trips[0].trip_headsign;
+  }
+  catch(err) {
+    head_sign = null;
   }
 
-  let destination = trips[0].trip_headsign;
-  let cur_stop = stops[0].stop_name;
+  try
+  {
+    stop_name = stops[0].stop_name;
+  }
+  catch (err)
+  {
+    stop_name = null;
+  }
+ 
+  let destination = head_sign;
+  let cur_stop = stop_name;
 
   return [cur_stop, destination];
 }
@@ -173,7 +189,7 @@ async function get_vehicle_list(feed,rid)
   {
     if (feed.entity[i].vehicle.trip.routeId == rid) {
       let obj = feed.entity[i].vehicle;
-      obj.currentStopSequence = await get_stops(feed.entity[i].vehicle);
+      obj.currentStopSequence = get_stops(feed.entity[i].vehicle);
       vehicles.push(obj);
     }
   }

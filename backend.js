@@ -92,7 +92,9 @@ app.listen(3000, () => {
 
 async function get_cr_routes()
 {
-  const cr_routes = db.prepare('SELECT * FROM routes WHERE route_id LIKE ? OR route_id LIKE ?').all("CR-%", "%CapeF%");
+  const cr_routes = db.prepare('SELECT * FROM routes WHERE route_desc LIKE ?').all("Commuter Rail");
+
+  console.log(cr_routes);
 
   return cr_routes;
 }

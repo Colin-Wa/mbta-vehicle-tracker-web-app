@@ -92,7 +92,7 @@ app.listen(3000, () => {
 
 async function get_cr_routes()
 {
-  const cr_routes = db.prepare('SELECT * FROM routes WHERE route_id LIKE ? OR route_id LIKE ?').all("CR-%", "%CapeFlyer%");
+  const cr_routes = db.prepare('SELECT * FROM routes WHERE route_id LIKE ? OR route_id LIKE ?').all("CR-%", "%CapeF%");
 
   return cr_routes;
 }

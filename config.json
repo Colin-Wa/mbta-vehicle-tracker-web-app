@@ -6,7 +6,7 @@
             "realtimeUrls": [
                 "https://cdn.mbta.com/realtime/VehiclePositions.pb"
             ],
-            "exclude": ["stop_times"]
+            "exclude": ["stop_times", "fare_products"]
         }
     ],
     "bufferSizeMeters": 100000,

@@ -148,7 +148,7 @@ function get_stops(vehicle)
 {
 
   const trips = getTrips({
-    route_id: vehicle.trip.routeId,
+    trip_id: vehicle.trip.tripId,
     direction_id: vehicle.trip.directionId
   });
 
